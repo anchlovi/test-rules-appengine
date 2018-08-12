@@ -1,0 +1,11 @@
+load("@io_bazel_rules_appengine//appengine:java_appengine.bzl", "appengine_war")
+
+appengine_war(
+    name = "app",
+    jars = [
+        "//src/main/java/com/test/pcka/services",
+        "//src/main/java/com/test/pckb/services",
+        ],
+    data = glob(["webapp/**"]),
+    data_path = "/webapp",
+)
